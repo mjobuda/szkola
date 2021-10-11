@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<style>
+    .suwak {
+        width: 800px;
+        display: flex;
+        overflow-x: auto;
+    }
+
+    #body {
+        background-color: palegoldenrod;
+    }
+
+    #obrazek {
+        margin-top:11.5%;
+        margin-left: 46%;
+    }
+
+    img {
+        max-width: 46%;
+        height: 376px;
+    }
+</style>
+
+<head>
+</head>
+
+<body id="body" bgcolor="white" background="szkolna_klasa.jpg" text="black">
+    <center>
+        ZMIEŃ KOMPUTER<br>
+        <input class="suwak" orient="vertical" type="range" min="0" max="21" value="0" step="1"
+            onchange="zmien_IP(this.value)" />
+        <span id="range">192.168.50.120</span>
+    </center>
+    <center>
+        <img id="obrazek" name="obrazek" width="800" height="450"
+            src="C:\Users\admin\Documents\projekt_szkolny\zrzuty\1.png" alt="Komputer uczniowski o IP: 192.168.50.101">
+    </center>
+    <center>
+        ZMIEŃ SLAJD W CZASIE<br>
+        <input class='suwak' type="range" min="0" max="21" value="0" step="1" onchange="zmien_obraz(this.value)" />
+        <span id="wyswietlany_numer">0</span>
+    </center>
+</body>
+<script>
+    function zmien_obraz(nr_obrazka) {
+        document.images.obrazek.src = "zrzuty\\" + nr_obrazka + ".png";
+        document.getElementById('wyswietlany_numer').textContent = nr_obrazka;
+    }
+    function zmien_IP(octan_IP) {
+        console.log('octan_IP');
+    }
+</script>
+
+</html>
